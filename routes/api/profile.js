@@ -26,7 +26,7 @@ router.get('/', passport.authenticate('jwt', {session: false}),
             .populate('user', ['name', 'avatar'])
             .then(profile => {
                 if (!profile) {
-                    errors.noprofile = 'There is no profile for this user';
+                    errors.noprofile = 'No profile for this user';
                     return res.status(404).json(errors);
                 }
                 return res.json(profile);
@@ -34,6 +34,65 @@ router.get('/', passport.authenticate('jwt', {session: false}),
             .catch(err => res.status(404).json(err));
     }
 );
+
+// @route   GET api/profile/all
+// @desc    Get all Profiles
+// @access  Public
+router.get('/all', (req, res) => {
+    const  errors = {};
+    Profile.find()
+        .populate('user', ['name', 'avatar'])
+        .then(profiles => {
+            if (!profiles) {
+                errors.noprofile = 'No profiles found';
+                return res.status(404).json(errors);
+            }
+            res.json(profiles);
+        })
+        .catch(err => {
+            console.log(err);
+            errors.noprofile = 'No profiles found';
+            return res.status(404).json(errors)
+        })
+});
+
+// @route   GET api/profile/handle/:handle
+// @desc    Get Profile by handle
+// @access  Public
+router.get('/handle/:handle', (req, res) => {
+    const  errors = {};
+    Profile.findOne({ handle: req.params.handle })
+        .populate('user', ['name', 'avatar'])
+        .then(profile => {
+            if (!profile) {
+                errors.noprofile = 'No profile for this handle';
+                return res.status(404).json(errors)
+            }
+            res.json(profile)
+        })
+        .catch(err => res.status(404).json(err))
+});
+
+// @route   GET api/profile/user/:user_id
+// @desc    Get Profile by user ID
+// @access  Public
+router.get('/user/:user_id', (req, res) => {
+    const  errors = {};
+    Profile.findOne({ user: req.params.user_id })
+        .populate('user', ['name', 'avatar'])
+        .then(profile => {
+            if (!profile) {
+                errors.noprofile = 'No profile for this user ID';
+                return res.status(404).json(errors)
+            }
+            res.json(profile)
+        })
+        .catch(err => {
+            console.log(err);
+            errors.noprofile = 'No profile for this user ID';
+            return res.status(404).json(errors)
+        })
+});
 
 // @route   POST api/profile
 // @desc    Create or Edit user Profile
