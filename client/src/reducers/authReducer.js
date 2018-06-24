@@ -7,6 +7,10 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
+    console.log('-- action.payload')
+    console.log(action)
+    console.log(action.payload)
+    console.log(!isEmpty(action.payload))
     switch (action.type) {
         case SET_CURRENT_USER:
             return {

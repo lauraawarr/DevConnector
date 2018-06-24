@@ -28,7 +28,7 @@ export const loginUser = (userData) => dispatch => {
             localStorage.setItem('jwtToken', token);
             // Set token to Auth Header
             setAuthToken(token);
-            // DEcode tokent o get user data
+            // Decode tokent o get user data
             const decoded = jwt_decode(token);
             // Set current user
             dispatch(setCurrentUser(decoded))
@@ -45,6 +45,6 @@ export const loginUser = (userData) => dispatch => {
 export const setCurrentUser = (decoded) => {
     return {
         type: SET_CURRENT_USER,
-        paylod: decoded,
+        payload: decoded,
     }
 }
