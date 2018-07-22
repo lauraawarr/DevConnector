@@ -36,4 +36,4 @@ TextAreaFieldGroup.propTypes = {
     onChange: PropTypes.func.isRequired
 }
 
-export { TextAreaFieldGroup };
+export default TextAreaFieldGroup;
