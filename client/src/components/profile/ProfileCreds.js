@@ -46,19 +46,19 @@ class ProfileCreds extends Component {
       </li>
     ))
     return (
-      <div class="row">
+      <div className="row">
         {expItems.length ? (
-          <div class="col-md-6">
-            <h3 class="text-center text-info">Experience</h3>
-            <ul class="list-group">
+          <div className="col-md-6">
+            <h3 className="text-center text-info">Experience</h3>
+            <ul className="list-group">
               {expItems}
             </ul>
           </div>
         ) : null}
         {eduItems.length ? (
-          <div class="col-md-6">
-            <h3 class="text-center text-info">Education</h3>
-            <ul class="list-group">
+          <div className="col-md-6">
+            <h3 className="text-center text-info">Education</h3>
+            <ul className="list-group">
               {eduItems}
             </ul>
           </div>

@@ -26,12 +26,14 @@ class Education extends Component {
       <div>
         <h4 className="mb-4">Education Credentials</h4>
         <table className="table">
-          <tr>
-            <th>School</th>
-            <th>Degree</th>
-            <th>Years</th>
-            <th></th>
-          </tr>
+          <thead>
+            <tr>
+              <th>School</th>
+              <th>Degree</th>
+              <th>Years</th>
+              <th></th>
+            </tr>
+          </thead>
           <tbody>{education}</tbody>
         </table>
       </div>
