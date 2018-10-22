@@ -13,7 +13,7 @@ class Landing extends Component {
 
   render() {
     return (
-      <div className="landing">
+      <div className="landing section section--gradient">
         <div className="landing__overlay"/>
         <div className="landing__wrapper">
 
