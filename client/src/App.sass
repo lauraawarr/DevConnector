@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700')
+$primary: #17a2b8
+$secondary-dark: #177ab8
+$secondary-light: #17b8a6
+$white: #fff
+
+body
+  margin: 0
+  padding: 0
+  font-family: 'Open Sans', sans-serif
+
+img
+  width: 100%
+
+/* Buttons */
+.button__wrapper
+  display: flex
+  flex-direction: row
+.button
+  background-color: $primary
+  color: $white
+  border: none
+  border-radius: .25em
+  padding: .5em 1.5em
+  vertical-align: middle
+  line-height: 1.5
+  font-size: 1.1em
+  font-weight: 300
+  text-decoration: none
+  &:hover
+    color: $white
+    text-decoration: none
+    background-color: darken($primary, 5%)
+.button--dark
+  background-color: $secondary-dark
+  &:hover
+    background-color: darken($secondary-dark, 5%)
+.button--white
+  background-color: $white
+  color: $primary
+  &:hover
+    background-color: darken($white, 5%)
+    color: $primary
+
+/* Landing */
+.landing
+  display: flex
+  flex-direction: row
+  justify-content: center
+  position: relative
+  background-color: #eee
+  min-height: calc(100vh - 3.5em)
+  margin-top: -24px
+  margin-bottom: -50px
+  color: $white
+.landing__wrapper
+  display: flex
+  flex-direction: column
+  justify-content: center
+.landing__title
+  color: $white
+  font-size: 2.2em
+  font-weight: 400
+.landing__subtitle
+  color: darken($white, 5%)
+  font-size: 1.3em
+  font-weight: 300
+
+.card-form
+  opacity: 0.9
+
+.latest-profiles-img
+  width: 40px
+  height: 40px
+
+.form-control::placeholder
+  color: #bbb !important

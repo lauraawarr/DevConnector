@@ -5,6 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
     "jwt-decode": "^2.2.0",
     "moment": "^2.22.2",
     "react": "^16.4.0",
@@ -17,7 +21,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"node ./node_modules/gulp/bin/gulp.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
