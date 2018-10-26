@@ -29,7 +29,7 @@ export const addPost = (postData) => dispatch => {
 export const addLike = (postId) => dispatch => {
     axios
         .post(`/api/posts/like/${postId}`)
-        .then(res => dispatch(getPosts()))
+        .then(res => dispatch(getPosts(false)))
         .catch(err => dispatch({
             type: GET_ERRORS,
             payload: err.response.data
@@ -40,7 +40,7 @@ export const addLike = (postId) => dispatch => {
 export const removeLike = (postId) => dispatch => {
     axios
         .post(`/api/posts/unlike/${postId}`)
-        .then(res => dispatch(getPosts()))
+        .then(res => dispatch(getPosts(false)))
         .catch(err => dispatch({
             type: GET_ERRORS,
             payload: err.response.data
@@ -62,8 +62,8 @@ export const deletePost = (postId) => dispatch => {
 }
 
 // Get Posts
-export const getPosts = () => dispatch => {
-    dispatch(setPostLoading())
+export const getPosts = (startLoading = true) => dispatch => {
+    if (startLoading) dispatch(setPostLoading())
     axios
         .get('/api/posts')
         .then(res => dispatch({

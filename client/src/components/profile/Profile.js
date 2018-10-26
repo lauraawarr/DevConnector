@@ -35,7 +35,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-6">
               <Link to="/profiles" className="btn btn-light mb-3 float-left">
-                Back To Profiles
+                <i className="fa fa-chevron-left"></i> Back To Profiles
               </Link>
             </div>
             <div className="col-md-6" />
@@ -50,7 +50,7 @@ class Profile extends Component {
       )
     }
     return (
-      <div className="profile">
+      <div className="profile section">
         <div className="container">
           <div className="row">
             <div className="col-md-12">{ProfileContent}</div>

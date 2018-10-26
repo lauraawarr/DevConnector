@@ -30,12 +30,12 @@ class PostItem extends Component {
   render() {
     const { post, auth, showActions } = this.props
     return (
-      <div className="card card-body mb-3">
+      <div className="postCard card card-body mb-3">
         <div className="row">
           <div className="col-md-2">
-            <a href="profile.html">
-              <img className="rounded-circle d-none d-md-block" src={post.avatar} alt="" />
-            </a>
+            <div className="postCard__imageWrapper">
+              <img className="d-none d-md-block" src={post.avatar} alt="" />
+            </div>
             <br />
             <p className="text-center">{post.name}</p>
           </div>
@@ -46,29 +46,26 @@ class PostItem extends Component {
                 <button
                   type="button"
                   className="btn btn-light mr-1"
-                  onClick={this.onLikeClick.bind(this, post._id)}
+                  onClick={
+                    this.findUserLike(post.likes)
+                      ? this.onUnlikeClick.bind(this, post._id)
+                      : this.onLikeClick.bind(this, post._id)
+                  }
                 >
                   <i className={classnames('fas fa-thumbs-up', {
                     'text-info': this.findUserLike(post.likes)
                   })}></i>
                   <span className="badge badge-light">{post.likes.length}</span>
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-light mr-1"
-                  onClick={this.onUnlikeClick.bind(this, post._id)}
-                >
-                  <i className="text-secondary fas fa-thumbs-down"></i>
-                </button>
-                <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
-                  Comments
+                <Link to={`/post/${post._id}`} className="button postCard__comments">
+                  View Comments
                 </Link>
                 {post.user === auth.user.id ? (
                   <button
                     type="button"
-                    className="btn btn-danger mr-1"
+                    className="postCard__delete"
                     onClick={this.onDeleteClick.bind(this, post._id)}
-                  ><i className="fas fa-times"></i></button>
+                  ><i className="fa fa-trash-alt"></i> Delete</button>
                 ) : null}
               </span>
             ) : null}

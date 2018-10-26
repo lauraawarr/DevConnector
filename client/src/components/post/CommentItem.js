@@ -11,12 +11,12 @@ class CommentItem extends Component {
   render() {
     const { comment, postId, auth } = this.props
     return (
-      <div className="card card-body mb-3">
+      <div className="commentCard card card-body mb-3">
         <div className="row">
           <div className="col-md-2">
-            <a href="profile.html">
+            <div className="commentCard__imageWrapper">
               <img className="rounded-circle d-none d-md-block" src={comment.avatar} alt="" />
-            </a>
+            </div>
             <br />
             <p className="text-center">{comment.name}</p>
           </div>
@@ -25,9 +25,9 @@ class CommentItem extends Component {
             {comment.user === auth.user.id ? (
               <button
                 type="button"
-                className="btn btn-danger mr-1"
+                className="commentCard__delete"
                 onClick={this.onDeleteClick.bind(this, postId, comment._id)}
-              >Remove</button>
+              ><i className="fa fa-trash-alt"></i> Delete</button>
             ) : null}
           </div>
         </div>

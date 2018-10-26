@@ -43,14 +43,14 @@ class PostForm extends Component {
   render() {
     const { text, errors } = this.state
     return (
-      <div className="post-form mb-3">
+      <div className="postForm post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">
+          <div className="postForm__header card-header bg-info text-white">
             Say Something...
           </div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
-              <div className="form-group">
+              <div className="form-group postForm__textarea">
                 <TextAreaFieldGroup
                   placeholder="Create a post"
                   name="text"
@@ -59,7 +59,7 @@ class PostForm extends Component {
                   error={errors.text}
                 />
               </div>
-              <button type="submit" className="btn btn-dark">Submit</button>
+              <button type="submit" className="postForm__submit btn btn-dark">Submit</button>
             </form>
           </div>
         </div>

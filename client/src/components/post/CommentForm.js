@@ -44,14 +44,14 @@ class CommentForm extends Component {
   render() {
     const { text, errors } = this.state
     return (
-      <div className="post-form mb-3">
+      <div className="commentForm post-form mb-3">
         <div className="card card-info">
           <div className="card-header bg-info text-white">
             Make a Comment...
           </div>
           <div className="card-body">
             <form onSubmit={this.onSubmit}>
-              <div className="form-group">
+              <div className="form-group commentForm__textarea">
                 <TextAreaFieldGroup
                   placeholder="Reply to post"
                   name="text"
@@ -60,7 +60,7 @@ class CommentForm extends Component {
                   error={errors.text}
                 />
               </div>
-              <button type="submit" className="btn btn-dark">Submit</button>
+              <button type="submit" className="btn btn-dark commentForm__submit">Submit</button>
             </form>
           </div>
         </div>

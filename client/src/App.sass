@@ -9,6 +9,9 @@ body
   padding: 0
   font-family: 'Open Sans', sans-serif
 
+img
+  width: 100%
+
 /* Buttons */
 .button__wrapper
   display: flex
@@ -42,6 +45,7 @@ body
 /* Generic Section */
 .section
   min-height: calc(100vh - 3.5em)
+  padding: .5em
 .section--gradient
   background-color: #eee
   background-image: linear-gradient(to bottom right, $secondary-dark, $secondary-light)
@@ -71,7 +75,6 @@ body
     opacity: 1
     transform: translateY(0px)
 
-
 /* Landing */
 .landing
   display: flex
@@ -87,6 +90,13 @@ body
   animation-name: fadeIn
   animation-duration: 450ms
   animation-fill-mode: forwards
+.landing__titleWrapper
+  display: flex
+  flex-direction: row
+.landing__icon
+  font-size: 4.25em
+  margin-right: 0.2em
+  margin-left: -0.9em
 .landing__title
   color: $white
   font-size: 2.2em
@@ -102,13 +112,151 @@ body
   justify-content: center
   align-items: center
 
+/* Profiles */
+.profiles
+  .profiles__header
+    font-size: 2em
+    font-weight: 300
+  .profiles__subheader
+    font-size: 1.2em
+    font-weight: 500
+  .profileCard
+    animation-name: fadeIn
+    animation-duration: 650ms
+    animation-fill-mode: forwards
+  .profileCard__name
+    font-size: 1.4em
+  .profileCard__company, .profileCard__location
+    font-size: 1.1em
+    margin-bottom: .25em
+  .profileCard__imageWrapper
+    height: 9em
+    width: 9em
+    background-color: darken(#f8f9fa, 5%)
+    border-radius: 50%
+    overflow: hidden
+  .profileCard__skillItem
+    padding: .5rem 1rem
+  .profileCard__skeleton
+    height: 1.25em
+    width: 8em
+    background-color: darken(#f8f9fa, 5%)
+    border-radius: 1em
+    margin: .5em
+  .profileCard__skeleton--row
+    margin-top: .75em
+  .profileCard__skeleton--long
+    width: 10em
+  .profileCard__skeleton--round
+    height: 8em
+  .button
+    margin-top: 1em
+    padding-top: .2em
+    padding-bottom: .2em
+    font-size: 1em
 
-.card-form
-  opacity: 0.9
+/* Profile */
+.profile__header
+  display: flex
+  flex-direction: row
+  background-color: $primary
+  background-image: linear-gradient(to bottom right, $secondary-dark, $secondary-light)
+.profile__imageWrapper
+  // max-width: 25%
+  margin-right: 1.5em
+  img
+    width: auto
+    height: 100%
+    max-height: 9em
+.profile__headerWrapper
+  display: flex
+  flex-direction: column
+.profile__name
+  font-size: 1.5em
 
-.latest-profiles-img
-  width: 40px
-  height: 40px
+/* Dashboard*/
+.dashboard
+  margin-top: 2em
+  .profileActions__button
+    padding: .35em 1em
+    margin-right: .25em
+    font-size: .9em
+  .experience__header, .education__header
+    font-size: 1.3em
+    margin-bottom: .5em
+  .dashboard__table
+    th
+      width: 30%
+      font-weight: 600
+    td
+      font-weight: 300
+
+/* Post Feed */
+.feed
+  margin-top: 2em
+  .postForm
+    animation-name: fadeIn
+    animation-duration: 650ms
+    animation-fill-mode: forwards
+  .postForm__textarea textarea
+    font-weight: 300
+  .postForm__submit
+    font-weight: 300
+    padding-left: 2em
+    padding-right: 2em
+  .postCard
+    opacity: 0
+    animation-name: animateIn
+    animation-duration: 650ms
+    animation-fill-mode: forwards
+    @for $i from 1 through 10
+      &:nth-child(#{$i})
+        animation-delay: 800ms + $i * 200ms
+
+/* Post */
+.post
+  margin-top: 2em
+  .postCard, .commentForm
+    animation-name: fadeIn
+    animation-duration: 650ms
+    animation-fill-mode: forwards
+  .commentForm__textarea textarea
+    font-weight: 300
+  .commentForm__submit
+    font-weight: 300
+    padding-left: 2em
+    padding-right: 2em
+  .commentCard
+    opacity: 0
+    animation-name: animateIn
+    animation-duration: 650ms
+    animation-fill-mode: forwards
+    @for $i from 1 through 10
+      &:nth-child(#{$i})
+        animation-delay: 500ms + $i * 200ms
+
+/* Post/Comment Card */
+.postCard, .commentCard
+  .postCard__imageWrapper, .commentCard__imageWrapper
+    height: 9em
+    width: 9em
+    background-color: darken(#f8f9fa, 5%)
+    border-radius: 50%
+    overflow: hidden
+  .postCard__delete, .commentCard__delete
+    background: none
+    border: none
+    color: darken(red, 10%)
+    font-size: .9em
+    cursor: pointer
+    &:hover
+      color: darken(red, 15%)
+  .postCard__delete
+    margin-left: .5em
+  .postCard__comments
+    font-size: .9em
+    padding: .3em .8em
+
 
 .form-control::placeholder
   color: #bbb !important

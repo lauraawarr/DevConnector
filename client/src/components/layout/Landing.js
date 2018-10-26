@@ -17,10 +17,15 @@ class Landing extends Component {
         <div className="landing__overlay"/>
         <div className="landing__wrapper">
 
-          <h1 className="landing__title">Developer Connector</h1>
-          <h2 className="landing__subtitle">
-              Create a developer profile/portfolio, share posts and get help from other developers
-          </h2>
+          <div className="landing__titleWrapper">
+            <i className="landing__icon fa fa-plug"></i>
+            <div>
+              <h1 className="landing__title">Developer Connector</h1>
+              <h2 className="landing__subtitle">
+                  Create a developer profile/portfolio, share posts and get help from other developers
+              </h2>
+            </div>
+          </div>
           <hr />
           <div className="button__wrapper">
             <Link className="button button--dark mr-2" to="/register">

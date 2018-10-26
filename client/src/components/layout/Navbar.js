@@ -61,7 +61,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
           <div className="container">
           <Link className="navbar-brand" to="/">
-              DevConnector
+            <i className="fa fa-plug"></i> DevConnector
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
               <span className="navbar-toggler-icon"></span>

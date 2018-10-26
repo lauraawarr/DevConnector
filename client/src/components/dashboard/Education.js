@@ -23,9 +23,9 @@ class Education extends Component {
         </tr>
     ))
     return (
-      <div>
-        <h4 className="mb-4">Education Credentials</h4>
-        <table className="table">
+      <div className="education">
+        <h4 className="education__header">Education Credentials</h4>
+        <table className="table dashboard__table">
           <thead>
             <tr>
               <th>School</th>
