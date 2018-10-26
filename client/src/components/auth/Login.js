@@ -54,8 +54,8 @@ class Login extends Component {
       <div className="login section section--gradient">
         <div className="section__card">
 
-          <h1 className="display-4 text-center">Log In</h1>
-          <p className="lead text-center">Sign in to your DevConnector account</p>
+          <h1 className="login__header text-center">Log In</h1>
+          <p className="login__subheader text-center">Sign in to your DevConnector account</p>
           <form onSubmit={this.onSubmit}>
             <TextFieldGroup
               placeholder="Email Address"

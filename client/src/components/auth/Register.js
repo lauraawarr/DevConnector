@@ -57,8 +57,8 @@ class Register extends Component {
       <div className="register section section--gradient">
         <div className="section__card">
 
-            <h1 className="display-4 text-center">Sign Up</h1>
-            <p className="lead text-center">Create your DevConnector account</p>
+            <h1 className="login__header text-center">Sign Up</h1>
+            <p className="login__subheader text-center">Create your DevConnector account</p>
             <form noValidate onSubmit={this.onSubmit}>
               <TextFieldGroup
                 placeholder="Name"
